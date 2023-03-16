@@ -1,8 +1,2 @@
-# **c#**
-## index
-  1.[basic(구문_문법)](1.basic(구문_문법))<br>
-  + 기초 문법<br>
+    0.1. login, mainform 작성 완료 3/16
 
-  2.[exercise](2.exercise)<br>
-  
----
