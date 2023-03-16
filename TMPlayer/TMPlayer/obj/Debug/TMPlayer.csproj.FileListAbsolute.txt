@@ -1,0 +1,12 @@
+C:\Users\KB\Desktop\Csharp\TMPlayer\TMPlayer\bin\Debug\TMPlayer.exe.config
+C:\Users\KB\Desktop\Csharp\TMPlayer\TMPlayer\bin\Debug\TMPlayer.exe
+C:\Users\KB\Desktop\Csharp\TMPlayer\TMPlayer\bin\Debug\TMPlayer.pdb
+C:\Users\KB\Desktop\Csharp\TMPlayer\TMPlayer\obj\Debug\TMPlayer.csproj.AssemblyReference.cache
+C:\Users\KB\Desktop\Csharp\TMPlayer\TMPlayer\obj\Debug\TMPlayer.csproj.SuggestedBindingRedirects.cache
+C:\Users\KB\Desktop\Csharp\TMPlayer\TMPlayer\obj\Debug\TMPlayer.login_Page.resources
+C:\Users\KB\Desktop\Csharp\TMPlayer\TMPlayer\obj\Debug\TMPlayer.Properties.Resources.resources
+C:\Users\KB\Desktop\Csharp\TMPlayer\TMPlayer\obj\Debug\TMPlayer.csproj.GenerateResource.cache
+C:\Users\KB\Desktop\Csharp\TMPlayer\TMPlayer\obj\Debug\TMPlayer.csproj.CoreCompileInputs.cache
+C:\Users\KB\Desktop\Csharp\TMPlayer\TMPlayer\obj\Debug\TMPlayer.exe
+C:\Users\KB\Desktop\Csharp\TMPlayer\TMPlayer\obj\Debug\TMPlayer.pdb
+C:\Users\KB\Desktop\Csharp\TMPlayer\TMPlayer\obj\Debug\TMPlayer.ui.main_page.resources
