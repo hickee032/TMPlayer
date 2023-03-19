@@ -26,12 +26,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main_page));
             this.panelChildForm = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel_tbar = new System.Windows.Forms.Panel();
             this.main_btnTray = new System.Windows.Forms.Button();
             this.main_btnSmaller = new System.Windows.Forms.Button();
             this.main_btnClose = new System.Windows.Forms.Button();
             this.panelPlayer = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.btnHelp = new System.Windows.Forms.Button();
             this.panelToolsSideMenu = new System.Windows.Forms.Panel();
@@ -51,7 +50,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.M_btnVideo = new System.Windows.Forms.Button();
             this.btnMedia = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -59,9 +58,9 @@
             this.context_TrayIcon = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnl_content = new System.Windows.Forms.Panel();
             this.panelChildForm.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel_tbar.SuspendLayout();
             this.panelSideMenu.SuspendLayout();
             this.panelToolsSideMenu.SuspendLayout();
             this.panelPlaylistSubMenu.SuspendLayout();
@@ -74,9 +73,9 @@
             // panelChildForm
             // 
             this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.panelChildForm.Controls.Add(this.panel1);
+            this.panelChildForm.Controls.Add(this.pnl_content);
+            this.panelChildForm.Controls.Add(this.panel_tbar);
             this.panelChildForm.Controls.Add(this.panelPlayer);
-            this.panelChildForm.Controls.Add(this.pictureBox1);
             this.panelChildForm.Controls.Add(this.panelSideMenu);
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(0, 0);
@@ -84,16 +83,19 @@
             this.panelChildForm.Size = new System.Drawing.Size(1059, 712);
             this.panelChildForm.TabIndex = 5;
             // 
-            // panel1
+            // panel_tbar
             // 
-            this.panel1.Controls.Add(this.main_btnTray);
-            this.panel1.Controls.Add(this.main_btnSmaller);
-            this.panel1.Controls.Add(this.main_btnClose);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(250, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(809, 29);
-            this.panel1.TabIndex = 1;
+            this.panel_tbar.Controls.Add(this.main_btnTray);
+            this.panel_tbar.Controls.Add(this.main_btnSmaller);
+            this.panel_tbar.Controls.Add(this.main_btnClose);
+            this.panel_tbar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_tbar.Location = new System.Drawing.Point(250, 0);
+            this.panel_tbar.Name = "panel_tbar";
+            this.panel_tbar.Size = new System.Drawing.Size(809, 29);
+            this.panel_tbar.TabIndex = 1;
+            this.panel_tbar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_tbar_MouseDown);
+            this.panel_tbar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel_tbar_MouseMove);
+            this.panel_tbar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel_tbar_MouseUp);
             // 
             // main_btnTray
             // 
@@ -142,17 +144,6 @@
             this.panelPlayer.Name = "panelPlayer";
             this.panelPlayer.Size = new System.Drawing.Size(809, 99);
             this.panelPlayer.TabIndex = 4;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(250, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(809, 712);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // panelSideMenu
             // 
@@ -385,7 +376,7 @@
             this.panelMediaSubMenu.Controls.Add(this.button5);
             this.panelMediaSubMenu.Controls.Add(this.button4);
             this.panelMediaSubMenu.Controls.Add(this.button3);
-            this.panelMediaSubMenu.Controls.Add(this.button2);
+            this.panelMediaSubMenu.Controls.Add(this.M_btnVideo);
             this.panelMediaSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelMediaSubMenu.Location = new System.Drawing.Point(0, 145);
             this.panelMediaSubMenu.Name = "panelMediaSubMenu";
@@ -437,20 +428,21 @@
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // M_btnVideo
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.LightGray;
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(233, 40);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "button2";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
+            this.M_btnVideo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.M_btnVideo.FlatAppearance.BorderSize = 0;
+            this.M_btnVideo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.M_btnVideo.ForeColor = System.Drawing.Color.LightGray;
+            this.M_btnVideo.Location = new System.Drawing.Point(0, 0);
+            this.M_btnVideo.Name = "M_btnVideo";
+            this.M_btnVideo.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.M_btnVideo.Size = new System.Drawing.Size(233, 40);
+            this.M_btnVideo.TabIndex = 0;
+            this.M_btnVideo.Text = "Video";
+            this.M_btnVideo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.M_btnVideo.UseVisualStyleBackColor = true;
+            this.M_btnVideo.Click += new System.EventHandler(this.M_btnVideo_Click);
             // 
             // btnMedia
             // 
@@ -513,6 +505,14 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
+            // pnl_content
+            // 
+            this.pnl_content.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_content.Location = new System.Drawing.Point(250, 29);
+            this.pnl_content.Name = "pnl_content";
+            this.pnl_content.Size = new System.Drawing.Size(809, 584);
+            this.pnl_content.TabIndex = 5;
+            // 
             // main_page
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -522,10 +522,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(950, 600);
             this.Name = "main_page";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TMP";
             this.panelChildForm.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel_tbar.ResumeLayout(false);
             this.panelSideMenu.ResumeLayout(false);
             this.panelToolsSideMenu.ResumeLayout(false);
             this.panelPlaylistSubMenu.ResumeLayout(false);
@@ -540,7 +540,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panelChildForm;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelPlayer;
         private System.Windows.Forms.Panel panelSideMenu;
         private System.Windows.Forms.Button btnHelp;
@@ -561,10 +560,10 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button M_btnVideo;
         private System.Windows.Forms.Button btnMedia;
         private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel_tbar;
         private System.Windows.Forms.Button main_btnSmaller;
         private System.Windows.Forms.Button main_btnClose;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -573,5 +572,6 @@
         private System.Windows.Forms.ToolStripMenuItem showToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Button main_btnTray;
+        private System.Windows.Forms.Panel pnl_content;
     }
 }

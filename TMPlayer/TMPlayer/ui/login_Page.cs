@@ -21,6 +21,12 @@ namespace TMPlayer {
             if (tbxUsername.Text.Length == 0) {
 
             }
+            else {
+                this.Hide();
+                main_page mainp= new main_page();
+                mainp.ShowDialog();
+                this.Close();
+            }
 
             Console.WriteLine(tbxUsername.Text);
             Console.WriteLine(tbxPass.Text);
@@ -45,8 +51,9 @@ namespace TMPlayer {
             if (onClick) {
                         Point p = PointToScreen(e.Location);
                        Location = new Point(p.X - this.startPoint.X, p.Y - this.startPoint.Y);
-                  }
-            }
+             }
+        }
+
 
         private void login_Page_MouseUp(object sender, MouseEventArgs e) {
             onClick = false;
